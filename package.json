@@ -1,0 +1,43 @@
+{
+  "name": "@factory-floor/ai-tools",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Independent file and Git MCP servers with immutable startup access.",
+  "engines": {
+    "node": ">=24"
+  },
+  "bin": {
+    "ai-files-mcp": "src/files/server.ts",
+    "ai-git-mcp": "src/git/server.ts"
+  },
+  "exports": {
+    "./files/*": "./src/files/*.ts",
+    "./git/*": "./src/git/*.ts",
+    "./shared/*": "./src/shared/*.ts",
+    "./tools/access": "./src/shared/access.ts",
+    "./tools/arguments": "./src/shared/arguments.ts",
+    "./tools/git": "./src/git/git.ts",
+    "./tools/*": "./src/files/*.ts",
+    "./policy/*": "./src/policy/*.ts",
+    "./mcp/start": "./src/mcp/start.ts",
+    "./mcp/stdio": "./src/mcp/stdio.ts",
+    "./contract": "./src/contract.ts",
+    "./program-path": "./src/program-path.ts"
+  },
+  "scripts": {
+    "deploy": "node deploy/release.mjs",
+    "files": "node src/files/server.ts",
+    "git": "node src/git/server.ts",
+    "test": "vitest run",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.0",
+    "typescript": "7.0.2",
+    "vitest": "5.0.3"
+  }
+}

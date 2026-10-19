@@ -1,0 +1,8 @@
+node_modules/
+.scratch/
+coverage/
+deploy/releases/
+deploy/current.json
+deploy/.staging-*/
+deploy/.current-*.json
+deploy/.release-lock/
